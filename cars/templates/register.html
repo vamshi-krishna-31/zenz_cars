@@ -50,6 +50,12 @@
             border-radius: 5px;
             font-size: 16px;
         }
+        .form-group .errorlist {
+            color: red;
+            margin: 5px 0 0;
+            list-style: none;
+            padding: 0;
+        }
         button {
             padding: 12px 15px;
             background-color: #28a745;
@@ -90,30 +96,79 @@
             <div class="form-group">
                 {{ form.username.label_tag }}
                 {{ form.username }}
+                {% if form.username.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.username.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             <div class="form-group">
                 {{ form.email.label_tag }}
                 {{ form.email }}
+                {% if form.email.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.email.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             <div class="form-group">
                 {{ form.password.label_tag }}
                 {{ form.password }}
+                {% if form.password.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.password.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             <div class="form-group">
                 {{ form.first_name.label_tag }}
                 {{ form.first_name }}
+                {% if form.first_name.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.first_name.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             <div class="form-group">
                 {{ form.mobile_number.label_tag }}
                 {{ form.mobile_number }}
+                {% if form.mobile_number.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.mobile_number.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             <div class="form-group">
                 {{ form.date_of_birth.label_tag }}
                 <input type="date" name="date_of_birth" required>
+                {% if form.date_of_birth.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.date_of_birth.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             <div class="form-group">
                 {{ form.location.label_tag }}
                 {{ form.location }}
+                {% if form.location.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.location.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             <button type="submit">Register</button>
         </form>
